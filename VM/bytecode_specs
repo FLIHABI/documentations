@@ -1,0 +1,64 @@
+<hex opcode> <mnemonic> <parameter>[<size of parameter in byte>]
+
+(*)  This operation works on the two first elements on the stack
+(**) This opcode uses the top of the stack
+
+------------------------------------------------
+VM management
+------------------------------------------------
+
+0x00 halt
+
+------------------------------------------------
+Stack and register management
+------------------------------------------------
+
+0x13 pop(**)
+0x17 push       <constant 8 bytes>[8]
+0x18 pushr      <register n°>[2]
+0x19 store(**)  <register n°>[2]
+
+------------------------------------------------
+Arithmetic
+------------------------------------------------
+
+0x20 add(*)
+0x21 sub(*)
+0x22 mul(*)
+0x23 div(*)
+0x24 mod(*)
+
+------------------------------------------------
+Tests
+------------------------------------------------
+
+0x30 cmp(*)    Set a flag to {-1, 0, 1}
+
+------------------------------------------------
+Branching
+------------------------------------------------
+
+0x40 call   <n° symbol>[2]
+0x41 ret(**)
+0x42 jmp    <offset relative to the next instruction>[2]
+0x43 je(*)  <offset relative to the next instruction>[2]
+0x44 jl(*)  <offset relative to the next instruction>[2]
+0x45 jg(*)  <offset relative to the next instruction>[2]
+0x46 jne(*) <offset relative to the next instruction>[2]
+0x47 jle(*) <offset relative to the next instruction>[2]
+0x48 jge(*) <offset relative to the next instruction>[2]
+
+------------------------------------------------
+Object management
+------------------------------------------------
+
+0x50 create <object id>[2]
+0x51 delete(**)
+
+------------------------------------------------
+[NOT AVAILABLE] Parallel (Working on it !)
+------------------------------------------------
+
+0xA0 parallel_call  <n° symbol>[2] push a task id[4] on the stack
+0xA1 parallel_wait(**)
+
