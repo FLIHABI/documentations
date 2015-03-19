@@ -38,7 +38,8 @@ Tests
 Branching
 ------------------------------------------------
 
-0x40 call   <n° symbol>[2]
+0x40 call   <symbol n°>[2]
+0x49 callr  <register n°>[2]
 0x41 ret(**)
 0x42 jmp    <offset relative to the next instruction>[2]
 0x43 je(*)  <offset relative to the next instruction>[2]
