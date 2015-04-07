@@ -1,0 +1,40 @@
+Mount the iso
+
+Get core.gz
+
+gunzip it
+
+you'll get a CPIO archive named 'core'
+
+make a directory to store the filesystem
+
+go into your directory
+
+sudo cpio -idH newc < ../core    (-i for extract, -d to create directories if
+required, -H newc to specify the format to keep)
+(or cpio -idH newc -F ../core, F to specify a file instead of standards in/out)
+
+here is the full filesystem, change whatever you want (init scripts in /opt)
+
+When you're finish, go back to the root of the filesystem and run:
+sudo find . | sudo cpio -oF ../core2 -H newc    (-o to create, -H
+specify how to store the files in the archive, 'newc' allow a huge number of
+inodes which is perfect for filesystems, 'crc' format is the same than 'newc'
+with a CRC checksum)
+
+gzip core2, you'll get core2.gz, but rename it to core.gz after cleaning the
+original core.gz
+
+make a 'final' directory
+
+copy the 'boot' directory in final
+replace the core.gz with the new one in final/boot
+
+change permissions owner and group of the core.gz file to be the same than other
+files
+
+Go to the parent directory of final
+
+sudo mkisofs -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -o flihabi.iso final/
+
+qemu-system-i386 --cdrom flihabi.iso
