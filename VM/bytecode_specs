@@ -14,12 +14,12 @@ Stack and register management
 ------------------------------------------------
 
 0x13 pop(**)
-0x17 push       <constant 8 bytes>[8]
+0x17 push       <constant>[8]
 0x18 pushr      <register n°>[2]
 0x19 popr(**)   <register n°>[2]
 
 ------------------------------------------------
-Arithmetic
+Arithmetic and bitwise
 ------------------------------------------------
 
 0x20 add(*)
@@ -27,6 +27,12 @@ Arithmetic
 0x22 mul(*)
 0x23 div(*)
 0x24 mod(*)
+0x25 and(*)
+0x26 or(*)
+0x27 xor(*)
+0x28 not(**)
+0x29 shr(**) <shift>[1]
+0x2A shl(**) <shift>[1]
 
 ------------------------------------------------
 Tests
