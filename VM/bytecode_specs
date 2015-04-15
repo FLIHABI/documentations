@@ -3,6 +3,8 @@
 (*)  This operation works on the two first elements on the stack
 (**) This opcode uses the top of the stack
 
+Multibyte operands are represented in little endian
+
 ------------------------------------------------
 VM management
 ------------------------------------------------
