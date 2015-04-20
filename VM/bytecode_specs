@@ -15,7 +15,7 @@ VM management
 Stack and register management
 ------------------------------------------------
 
-0x12 setr       <registre n°>[2]  <constant>[8]
+0x12 setr       <register n°>[2]  <constant>[8]
 0x13 pop(**)
 0x17 push       <constant>[8]
 0x18 pushr      <register n°>[2]
