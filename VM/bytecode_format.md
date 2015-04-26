@@ -9,11 +9,11 @@ Header
 ======
 
 4  | Magic number: 0x54, 0x4F, 0x4C, 0x4B
-8  | Offset of the symboles table
-8  | Offset of the strings table
-8  | Offset of the bytecode
-8  | Size of the bytecode data
-8  | Entry point of the program
+4  | Offset of the symboles table
+4  | Offset of the strings table
+4  | Offset of the bytecode
+4  | Size of the bytecode data
+4  | Entry point of the program
 
 Symboles table
 ==============
@@ -21,13 +21,13 @@ Symboles table
 Symboles table header
 ---------------------
 
-8  | Size in bytes of the symboles table
+4  | Size in bytes of the symboles table
 
 Symbol entry
 ------------
 
 2  | Symbol identifier
-8  | Address of the symbol, starting from the bytecode's address
+4  | Address of the symbol, starting from the bytecode's address
 
 Litteral strings
 ================
@@ -35,8 +35,8 @@ Litteral strings
 Strings header
 --------------
 
-8  | Size in bytes of the string table
-8  | Number of strings in the table
+4  | Size in bytes of the string table
+4  | Number of strings in the table
 
 Symbol entry
 ------------
