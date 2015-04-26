@@ -38,7 +38,7 @@ Strings header
 4  | Size in bytes of the string table
 4  | Number of strings in the table
 
-Symbol entry
+String entry
 ------------
 
 2  | String identifier
