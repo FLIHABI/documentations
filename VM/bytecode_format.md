@@ -8,13 +8,44 @@ machine.
 Header
 ======
 
-
+4  | Magic number: 0x54, 0x4F, 0x4C, 0x4B
+8  | Ofsset of the symboles table
+8  | Offset of the strings table
+8  | Offset of the bytecode
+8  | Size of the bytecode data
+8  | Entry point of the program
 
 Symboles table
 ==============
 
+Symboles table header
+---------------------
 
+8  | Size in bytes of the symboles table
+
+Symbol entry
+------------
+
+2  | Symbol identifier
+8  | Address of the symbol, starting from the bytecode's address
+
+Litteral strings
+================
+
+Strings header
+--------------
+
+8  | Size in bytes of the string table
+8  | Number of strings in the table
+
+Symbol entry
+------------
+
+2  | String identifier
+4  | String length in bytes
+?  | Litteral string itself
 
 Bytecode
 ========
 
+?  | Bytecode
