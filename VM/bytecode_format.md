@@ -9,7 +9,7 @@ Header
 ======
 
 4  | Magic number: 0x54, 0x4F, 0x4C, 0x4B
-8  | Ofsset of the symboles table
+8  | Offset of the symboles table
 8  | Offset of the strings table
 8  | Offset of the bytecode
 8  | Size of the bytecode data
