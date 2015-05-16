@@ -20,7 +20,7 @@ Asterisks
 value on the stack will be the value2 and the next value will be value1. Then
 the operation will be "value1 <op> value2"
 
-+ The elements used are poped
+\+ The elements used are poped
 
 $ A result is pushed on the stack
 
