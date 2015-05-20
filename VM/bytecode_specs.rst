@@ -36,13 +36,13 @@ VM management
 Stack and register management
 =============================
 
+- 0x10 save$       <function id>[2]
+- 0x11 restore+    <function id>[2]
 - 0x12 setr        <register n°>[2]  <constant>[8]
 - 0x13 pop(*)+
 - 0x17 push$       <constant>[8]
 - 0x18 pushr$      <register n°>[2]
 - 0x19 popr(*)+    <register n°>[2]
-- 0x20 save$       <function id>[2]
-- 0x21 restore+    <function id>[2]
 
 TODO:
 save and restore with function id from register
@@ -74,7 +74,6 @@ Branching
 =========
 
 - 0x40 call     <symbol n°>[2]
-- 0x49 callr    <register n°>[2]
 - 0x41 ret
 - 0x42 jmp      <offset relative to the next instruction>[2]
 - 0x43 je(**)+  <offset relative to the next instruction>[2]
@@ -83,6 +82,7 @@ Branching
 - 0x46 jne(**)+ <offset relative to the next instruction>[2]
 - 0x47 jle(**)+ <offset relative to the next instruction>[2]
 - 0x48 jge(**)+ <offset relative to the next instruction>[2]
+- 0x49 callr    <register n°>[2]
 
 =================
 Object management
