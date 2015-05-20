@@ -45,7 +45,7 @@ Stack and register management
 - 0x21 restore+    <function id>[2]
 
 TODO:
-save and restore with function is from register
+save and restore with function id from register
 
 ======================
 Arithmetic and bitwise
@@ -88,14 +88,10 @@ Branching
 Object management
 =================
 
-- 0x50 create$ <member count>[2]
-- 0x51 delete(*)+
-- 0x52 read(**)+$ pop the object id, pop the member id, push the value read
-- 0x53 write(***)+ pop the object id, pop the member id, pop the value to write
-
-TODO:
-read to register
-write from register's value
+- 0x50 create(*)+$      pop the member count, push the object id
+- 0x51 delete(*)+       pop the object id
+- 0x52 read(**)+$       pop the object id, pop the member id, push the value read
+- 0x53 write(***)+      pop the object id, pop the member id, pop the value to write
 
 ==========================================
 [NOT AVAILABLE] Parallel (Working on it !)
