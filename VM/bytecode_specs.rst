@@ -83,6 +83,7 @@ Branching
 - 0x47 jle(**)+ <offset relative to the next instruction>[2]
 - 0x48 jge(**)+ <offset relative to the next instruction>[2]
 - 0x49 callr    <register n°>[2]
+- 0x4A jmps(*)+
 
 =================
 Object management
