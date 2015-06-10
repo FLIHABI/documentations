@@ -94,9 +94,9 @@ Object management
 - 0x52 read(**)+$       pop the object id, pop the member id, push the value read
 - 0x53 write(***)+      pop the object id, pop the member id, pop the value to write
 
-==========================================
-[NOT AVAILABLE] Parallel (Working on it !)
-==========================================
+========
+Parallel
+========
 
-- 0xA0 parallel_call  <n° symbol>[2] push a task id[4] on the stack
-- 0xA1 parallel_wait(*)
+- 0xA0 pcall$       <n° symbol>[2] push a task id on the stack
+- 0xA1 pwait(*)+$   pop the task id, push the return value of the task
